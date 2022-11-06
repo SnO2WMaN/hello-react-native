@@ -33,6 +33,7 @@
             emulator
             platform-tools
             platforms-android-31
+            patcher-v4
           ]);
         corepack = inputs.corepack.mkCorepack.${system} {
           nodejs = pkgs: pkgs.nodejs;
@@ -74,6 +75,10 @@
             {
               name = "PATH";
               prefix = "${android-sdk}/share/android-sdk/platform-tools";
+            }
+            {
+              name = "PATH";
+              prefix = "$PRJ_ROOT/node_modules/.bin";
             }
           ];
         };
